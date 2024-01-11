@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Result Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #result {
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 30px;
+            text-align: center;
+        }
+        h1,h2{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mark for Information Technology</h1>
+    <h2>Enter Marks</h2>
+    <section id="result">
+        <label for="c">1. C Language</label>
+        <input type="number" name="c" id="c"> <br><br>
+        <label for="cpp">2. C++ Language</label>
+        <input type="number" name="cpp" id="cpp"><br><br>
+        <label for="db">3. Database</label>
+        <input type="number" name="db" id="db"><br><br>
+        <label for="hml">4. HTML</label>
+        <input type="number" name="hml" id="hml"><br><br>
+        <label for="css">5. CSS</label>
+        <input type="number" name="css" id="css"><br><br>
+        <label for="php">6. PHP</label>
+        <input type="number" name="php" id="php"><br><br>
+        <label for="java">7. Core Java</label>
+        <input type="number" name="java" id="java"><br><br>
+        <button onclick="result()">Show Result</button>
+        <button onclick="reloadPage()">Clear</button>
+        <h2 id="grades"></h2>
+        <p id="total"></p>
+        <p id="percentage"></p>
+    </section>
+
+    <script>
+        function result() {
+            let c = parseFloat(document.getElementById("c").value) || 0;
+            let cp = parseFloat(document.getElementById("cpp").value) || 0;
+            let db = parseFloat(document.getElementById("db").value) || 0;
+            let hml = parseFloat(document.getElementById("hml").value) || 0;
+            let css = parseFloat(document.getElementById("css").value) || 0;
+            let php = parseFloat(document.getElementById("php").value) || 0;
+            let java = parseFloat(document.getElementById("java").value) || 0;
+
+            let totalMarks = c + cp + db + hml + css + php + java;
+            let percentage = (totalMarks / 700) * 100;
+
+            let print;
+
+            if (isNaN(percentage)) {
+                print = "Please enter valid marks for all subjects";
+            } else {
+                if (percentage < 33) {
+                    print = "You Are failed";
+                } else if (percentage <= 55) {
+                    print = "you have to improve";
+                } else if (percentage <= 75) {
+                    print = "you are average";
+                } else if (percentage <= 90) {
+                    print = "you are doing well";
+                } else {
+                    print = "you nailed it bro";
+                }
+            }
+
+            document.getElementById("grades").innerText = print;
+            document.getElementById("total").innerText = "Total is: " + totalMarks + " / 700";
+            document.getElementById("percentage").innerText = "Percentage is: " + percentage.toFixed(2) + "%";
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

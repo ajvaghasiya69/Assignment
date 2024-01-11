@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+       button{
+        width: 35px;
+        height: 25px;
+       }
+       h1{
+        text-align: center;
+       }
+       #calculator{
+        border: 2px solid black;
+        width: 500px;
+        margin: 0 auto;
+        padding: 50px;
+       }
+       #result{
+        position: fixed;
+        left: 780px;
+        top: 200px;
+       }
+       #Answer{
+        position: fixed;
+        left: 700px;
+        top: 200px;
+       }
+    </style>
+</head>
+
+<body>
+    <section id="calculator">
+        <h1>Maths Calculation</h1>
+        <label for="">Enter 1st Number</label>
+        <input type="text" id="first"> <br><br>
+        <label for="">Enter 2nd Number</label>
+        <input type="text" id="second"><br><br>
+        <button onclick="sum()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mult()">*</button><br><br>
+        <button onclick="divi()">/</button>
+        <button onclick="percent()">%</button>
+        <p id="Answer">Answer is:</p>
+        <p id="result"></p>
+    </section>
+
+
+    <script>
+        function sum() {
+            let num1 = parseFloat(document.getElementById("first").value);
+            let num2 = parseFloat(document.getElementById("second").value);
+            let c = num1 + num2;
+            document.getElementById("result").innerHTML = c;
+        }
+        function sub() {
+            let num1 = parseFloat(document.getElementById("first").value);
+            let num2 = parseFloat(document.getElementById("second").value);
+            let c = num1 - num2;
+            document.getElementById("result").innerHTML = c;
+        }
+        function mult() {
+            let num1 = parseFloat(document.getElementById("first").value);
+            let num2 = parseFloat(document.getElementById("second").value);
+            let c = num1 * num2;
+            document.getElementById("result").innerHTML = c;
+        }
+        function divi() {
+            let num1 = parseFloat(document.getElementById("first").value);
+            let num2 = parseFloat(document.getElementById("second").value);
+            let c = num1 / num2;
+            document.getElementById("result").innerHTML = c;
+        }
+        function percent() {
+            let num1 = parseFloat(document.getElementById("first").value);
+            let num2 = parseFloat(document.getElementById("second").value);
+            let c = num1 * num2 / 100;
+            document.getElementById("result").innerHTML = c;
+        }
+    </script>
+</body>
+
+</html>
