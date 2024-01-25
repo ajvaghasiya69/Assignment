@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type: none;
+            display: inline-flex;
+        }
+        #ddlist{
+            display: none;
+        }
+        .tta{
+            display: none;
+        }
+        .project:hover #ddlist{
+display: block;
+        }
+        
+        ul li{
+            display: block;
+        }
+        .psd:hover .tta{
+display: block;
+        }
+       .project{
+        position: relative;
+       }
+       .ddlist{
+        position: absolute;
+        top: 20px;
+       right: 50px;
+       }
+       .nav{
+        position: relative;
+       }
+       .contact{
+        position: absolute;
+        top: 0px;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <li>Home</li>
+        <li>About</li>
+        <li class="project">Project 
+            <ul id="ddlist">
+                <li>Amazon</li>
+                <li>BCCI</li>
+                <li>Netflix</li>
+               
+    
+    
+                <div class="ddlist2">
+    
+                <li class="psd">PSD  <span>➥</span>
+    
+                  <ul class="tta">
+                    <li>Shushi</li>
+                    <li>Burger</li>
+                    <li>Restrunt</li>
+                  </ul>
+    
+        </li>
+    </div>
+    </li>
+        
+    </div>
+</body>
+</html>
