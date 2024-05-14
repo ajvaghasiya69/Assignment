@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JavaScript Slider</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            height: 250px; /* Adjust height as needed */
+            width: 1250px; /* Adjust width based on the number of boxes */
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .box1 {
+            height: 250px;
+            width: 250px;
+            border: 1px solid black;
+            background-color: brown;
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+
+        .box3 {
+            height: 150px;
+            width: 150px;
+            border: 1px solid black;
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: white;
+        }
+
+        .bb1 {
+            background-color: green;
+        }
+
+        .bb2 {
+            background-color: gray;
+        }
+
+        .bb3 {
+            background-color: yellow;
+        }
+
+        .bb4 {
+            background-color: yellowgreen;
+        }
+
+        .arrow {
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 200px;
+        }
+
+        #left-arrow {
+            left: 300px;
+        }
+
+        #right-arrow {
+            right: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple JavaScript Slider</h1>
+    <h3>Created By Dropinks</h3>
+    <div class="container">
+        <div class="box">
+            <div class="box3 bb2"></div>
+            <div class="box2 bb1"></div>
+            <div class="box1 "></div>
+            <div class="box2 bb3"></div>
+            <div class="box3 bb4"></div>
+        </div>
+    </div>
+    <span class="arrow" id="left-arrow">&#9664;</span>
+    <span class="arrow" id="right-arrow">&#9654;</span>
+
+    <script>
+        const container = document.querySelector('.container');
+        const leftArrow = document.getElementById('left-arrow');
+        const rightArrow = document.getElementById('right-arrow');
+
+        leftArrow.addEventListener('click', () => {
+            container.style.transform = "translateX(200px)"; // Adjust the value to move the boxes
+        });
+
+        rightArrow.addEventListener('click', () => {
+            container.style.transform = "translateX(-200px)"; // Adjust the value to move the boxes
+        });
+    </script>
+</body>
+</html>
