@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>What is React Js?</h4>
+    <p><b>Ans.</b>React is known for component based Architechure which allow you to create Resuable UI element making Complex Web Application easier to Manage and Maintain. It is Single Page Application.</p> <br><br>
+    <h4>What is NPM in React Js?</h4>
+    <p> <b>Ans.</b>NPM, the Node package manager is used for managing and sharing the packages for either React or Angular</p> <br><br>
+    <h4>What is Role of Node Js in react Js?</h4>
+    <p><b>Ans.</b>React renders UI components on the frontend, while Node. js manages server-side data communication. The synergy between React and Node. js creates a cohesive and responsive web application.</p> <br><br>
+    <h4>What is CLI command In React Js?</h4>
+    <p><b>Ans.</b>CLI  is a computer program that processes commands in the form of text inputs and in turn execute system functions</p> <br><br>
+    <h4>What is Components in React Js?</h4>
+    <p><b>Ans.</b>Components are reusable bits of code like functions</p> <br><br>
+    <h4>What is Header and Content Components in React Js?</h4>
+    <p><b>Ans.</b> A Header is a section at the top of a page that displays site name and navigation and Content Components are sections of content that can be added to multiple pages. </p> <br><br>
+    <h4>How to install React Js on Windows, Linux Operating System? How to
+        install NPM and How to check version of NPM?</h4>
+        <p><b>Ans.</b> <h5>For Install React js</h5>
+            Step 1: Install Node.js and npm <br>
+            Step 2: Install Create React App <br>
+            Step 3: Create a New React Project <br>
+
+            Step 4: Go To the Project Directory and Start the Development Server <br><br>
+        <h5>for install npm </h5><p>When we Install Nord js Npm install with it</p> <br><br>
+        <h5>check version of NPM</h5>
+        <p>Finding NPM Version Using the NPM-V Command</p>
+        </p>
+
+        <h4>How to check version of React Js?</h4>
+        <p><b>Ans.</b>navigate to the directory node_modules/react/cjs/react. development. js. Within this file, you can locate the version information typically provided under the comment section.</p>
+        <h4>How to change in components of React Js?</h4>
+        <p><b>Ans.</b>for the Chnage in Component of React Js use UseState Hook</p>
+        <h4>How to Create a List View in React Js?</h4>
+        <p><b>Ans.</b>
+        <pre>
+            import React, { useState } from 'react'
+
+            export default function Task1() {
+              
+                let [name,setname]=useState('');
+            
+                let [record,setrecord]=useState([]);
+            
+                let handleSubmit=()=>
+                    {
+                        setrecord([...record,name]);
+                        setname('');
+                    }
+            
+                return (
+                <div>
+                    <input type="text" placeholder='Enter Name' value={name} onChange={(e)=>setname(e.target.value)} />
+                    <button onClick={handleSubmit}>Add</button>
+            
+                    {
+                        record.map((item,i)=>
+                            {
+                                return <h2>{item}</h2>
+                            })
+                    }
+            
+                </div>
+              )
+            }
+        </pre></p>
+        <h4>Create Increment decrement state change by button click?</h4>
+        <p><b>Ans.</b><pre>
+            import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    const increment = () => {
+        setCount( count + 1);
+    };
+
+    const decrement = () => {
+        setCount( count   - 1);
+    };
+
+    const reset = () => {
+        setCount(0);
+    };
+
+    return (
+        <div>
+        <h1>React Web</h1>
+            <h4>Counter: {count}</h4>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    );
+} 
+
+export default Counter;
+
+        </pre></p>
+</body>
+</html>
